@@ -54,6 +54,7 @@ resource "aws_instance" "my_instance" {
     security_groups = [aws_security_group.my-sg.name]
     instance_type = "t3.micro"
     ami = "ami-05d2d839d4f73aafb" 
+    user_data = file("installnginx.sh")
 
 
     root_block_device {
