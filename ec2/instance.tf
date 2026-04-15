@@ -50,6 +50,7 @@ resource "aws_security_group" "my-sg" {
 #ec2 instance 
 
 resource "aws_instance" "my_instance" {
+    count = 2
     key_name = aws_key_pair.my_key.key_name
     security_groups = [aws_security_group.my-sg.name]
     instance_type = "t3.micro"
